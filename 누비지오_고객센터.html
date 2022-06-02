@@ -22,15 +22,9 @@
         /* 메인-------------------------------------------- */
 
         #all01 {
-            /* position: absolute; */
             width: 1100px;
-            height: 1200px;
-            margin-top: 400px;
-            /* top:50%; */
-            /* left: 50%; */
-            /* transform: translate(-50%, -50%); */
+            margin: auto;
             text-align: center;
-            border: 1px solid red;
         }
 
         a {text-decoration: none; color: black;}
@@ -47,6 +41,7 @@
             width: 275px;
             padding: 20px 0px 20px 0px;
             margin-top: 20px;
+            position: relative;
         }
 
         #section011 li:nth-child(1) {background-color: rgb(47, 204, 47);}
@@ -54,28 +49,28 @@
         #section011 li:nth-child(3) {background-color: rgb(221, 221, 221);}
         #section011 li:nth-child(4) {background-color: rgb(102, 102, 102);} 
         
-            
         [src="img02/네이버톡톡.png"] {
             position: absolute;
-            left: 48px;
-            top: 183px; 
+            top: 18px;
+            left: 55px;
         }
 
         [src="img02/kakao_logo02.png"] {
             position: absolute;
-            left: 333px;
-            top: 185px;
+            top: 21px;
+            left: 70px;    
         }
+
         [src="img02/문의.png"] {
             position: absolute;
-            top: 187px;
-            left: 629px;        
+            top: 22px;
+            left: 85px;
         }
     
         [src="img02/공지사항.png"] {
             position: absolute;
-            top: 182px;
-            left: 900px;
+            top: 16px;
+            left: 85px;
         }
 
         #section022 fieldset {
@@ -90,10 +85,12 @@
         
         #section022 select {
             border: none;
+            outline: none;
             width: 200px;
             height: 50px;
         }
         #section022 input {
+            outline: none;
             border: none;
             border-left: 1px solid rgb(0, 0, 0);
             width: 700px;
@@ -119,6 +116,7 @@
         #section044 {
             border-top:1.5px solid black;
             width: 100%;   
+            margin-bottom: 4em;
         }
         #section044 th {
             font-size: x-large;
@@ -142,11 +140,38 @@
             color: black;
             font-weight: bold;
         }
+
+        @media screen and (max-width: 800px) {
+            
+            #WebLayout, #all01 {
+                display: flex;
+                flex-direction: column;
+                width: 600px;
+                
+            }
+            
+            img {display: none;}
+
+            #section022 div {border: none;}
+
+            #section022 select {    
+            border: 1px solid black;
+            float: left;
+            width: 100px;
+        }
+            #section022 input {
+            float: left;
+            border: 1px solid rgb(0, 0, 0);
+            width: 325px;
+        }
+
+        }
 </style>
 </head>
 <body>
 
     <div id="all01">
+        <br>
 
         <div id="section011">
             <h2>고객만족센터</h2>
@@ -156,7 +181,7 @@
                 <li><a href="고객만족센터"><img src="img02/네이버톡톡.png">&emsp;네이버 톡톡 문의</a></li>
                 <li><a href="고객만족센터"><img src="img02/kakao_logo02.png">&emsp;&nbsp;카카오톡 문의</a></li>
                 <li><a href="고객만족센터"><img src="img02/문의.png">&emsp;문의하기</a></li>
-                <li><a href="고객만족센터"><img src="img02/공지사항.png">&emsp;공지사항</a></li>
+                <li><a href="고객만족센터"><img src="img02/공지사항.png"></a>&emsp;공지사항</li>
             </ul>
         </div>
 
@@ -233,7 +258,6 @@
                 <td>세트 구성품 / 색상 변경에 관한 문의</td>
             </tr>
         </table>
-
     </div> 
 </body>
 </html>
