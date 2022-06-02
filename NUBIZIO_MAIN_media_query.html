@@ -10,9 +10,30 @@
         #WebLayout {  width: 1263px;
                       margin: 0 auto; }
         
-        @media only screen and (min-width:576px) {}
-        @media only screen and (min-width:768px) {}
-        @media only screen and (min-width:992px) {}
+        @media only screen and (max-width:576px) {}
+        @media only screen and (max-width:768px) { 
+            .footermiddle01 {width: 100%;}
+            .footermiddle02 {width: 100%;}
+            .footermiddle04 {width: 100%;}
+        }
+        @media only screen and (max-width:1024px) {
+            #WebLayout  { width: 100%}
+            #quick_menu { display: none; }
+            #top {
+                height: 50px; width: 100%;
+                border-bottom: 5px solid rgb(223, 15, 15);
+                background-color: white;
+                position: fixed;
+                top: 0;
+                z-index: 999;
+            }
+            /* #top a { width: 50px;} */
+            #usermenu { display: none;}
+            #menu     { display: none;}
+            #section01 { padding-top: 125px;}
+            #footer { width: 100%;}
+           
+        }
         
         /*----------------- 퀵메뉴 ------------------*/
         #quick_menu { 
@@ -43,7 +64,7 @@
         #quick_menu button:active {
             opacity: 1;
         }
-        /*------- 로고 및 유저 정보 인터페이스 적용 --------*/
+        /*------- 로고 및 회원 정보 메뉴 적용 --------*/
 
         #top {
             height: 120px;
@@ -52,10 +73,15 @@
             justify-content: space-between;
             align-items: flex-start;
         }
-        #top a img    { height: 120px;   }
+        #top a { width: 120px ;}
+        #top a img    { 
+            max-width: 100%;
+            height: auto;   }
         #top div a *  { margin: 1px 5px; }
-        #usermenu > a         { font-size: 14px; }
-        #usermenu .dropmain>a { font-size: 14px; }
+        
+        #usermenu a   { text-decoration: none;
+                        color: rgb(132, 132, 132); }
+        #usermenu>a , #usermenu .dropmain>a  { font-size: 14px; }
 
         /*------------ 메뉴바 ------------------------*/
 
@@ -65,11 +91,11 @@
             color: bisque;
         }
         .dropmain [type=button] {
-            width: 160px;   height: 40px;
+            width: 135px;   height: 40px;
             margin: 0;      padding: 0;
             border: none;
             color: rgba(255, 221, 221, 0.938);
-            background-color: rgb(223, 15, 15);
+            background-color: transparent;
             font-size: 18px;
             font-weight: bold;
         }
@@ -77,31 +103,27 @@
             background-color: rgb(255, 231, 231);
             color:rgb(230, 1, 1);
         }
-        .search {
+        #menu form {
+            height: 40px;
             float: right;
-            padding: 6px;
-            margin-right: 15px;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
         }
-        [type=search] {
+        #menu [type=search] {
             height: 25px;
             border: none;
             border-radius: 5px;
             outline-color: rgb(255, 0, 0);
         }
-        [type=submit] {
-            height: 25px;
-            border: 1px solid rgb(255, 82, 52);
-            border-radius: 5px;
-            background-color: rgb(253, 238, 238);
-            color: rgb(230, 1, 1);
-            font-weight: bold;
-            box-shadow: 2px 2px 2px rgb(138, 52, 40);
+        #menu [type=submit] {
+           border: none; 
+           background-color: transparent;
+           cursor: pointer;
         }
-        [type=submit]:hover {
-            background-color: rgb(204, 0, 0);
-            color:rgb(221, 221, 221)
+        #menu [type=submit] img {
+            width: 23px;
         }
-
         /*------------ 드롭다운 메뉴 설정  -------------*/
 
         .dropmain {
@@ -120,9 +142,9 @@
         .sub2 {
             visibility: hidden;
             position: absolute;
-            width: 140px;
+            width: 125px;
             border: 0;
-            padding: 20px 10px 25px 10px;
+            padding: 15px 5px;
             background-color: rgb(241, 241, 241);           
         }
         .dropmain:hover .sub  {
@@ -142,10 +164,6 @@
                    transform: translateY(-10px) }
             to   { opacity: 3;
                    transform: none; }
-        }
-        #usermenu a {
-            text-decoration: none;
-            color: rgb(85, 85, 85);
         }
         .sub a {
             display: block;
@@ -170,10 +188,11 @@
         /* 여기서부터 슬라이딩 이미지 ------------------------------------*/
 
         .numbertext {
-            color: #f2f2f2;
+            /* color: #f2f2f2;
             font-size: 12px;
             position: absolute;
-            top: 0;
+            top: 0; */
+            display: none;
         }
 
         .mySlides img { z-index: -2; }
@@ -203,12 +222,11 @@
 
         /* 여기부터 하단이미지------------------------------------ */
         #container {
-            width: 97%;
-            margin: 0 auto;
+            margin: 20px 25px;
             display: grid;
-            grid-template: 265px 265px / 1fr 1fr 1fr 1fr; 
+            grid-template: 255px 255px / 1fr 1fr 1fr 1fr; 
             text-align: center;
-            color: rgb(5, 5, 5);
+            gap: 20px;
         }
 
         #container div img {
@@ -217,32 +235,10 @@
             object-fit: cover;
         }
 
-        #cella {
-            grid-area: 1 / 1 / 2 / 3;
-            padding: 0.5em;           }
-        #cellb {
-            grid-area: 2 / 1 / 3 / 2;
-            padding: 8px 8px 0px 8px; }
-        #cellc {
-            grid-area: 2 / 2 / 3 / 3;
-            padding: 8px 8px 0px 8px; }
-        #celld {
-            grid-area: 1 / 3 / 3 / 5;
-            padding: 8px 8px 0px 8px; }
-
-        #atext {
-            text-align: left;
-            position: absolute;
-            top: 50px;
-            left: 15px;
-        }
-        #dtext {
-            text-align: right;
-            position: absolute;
-            top: 383px;
-            bottom: 5px;
-            left: 667px;
-        }
+        #cella { grid-area: 1 / 1 / 2 / 3; }
+        #cellb { grid-area: 2 / 1 / 3 / 2; }
+        #cellc { grid-area: 2 / 2 / 3 / 3; }
+        #celld { grid-area: 1 / 3 / 3 / 5; }
 
         /*-------------- 섹션2 ------------------*/
 
@@ -253,7 +249,7 @@
             display: flex ;
             flex-direction: row ;
             justify-content: space-around;
-            flex-wrap: nowrap ;
+            flex-wrap: wrap ;
             margin: 15px;
         }
         .pop {
@@ -310,6 +306,7 @@
         /*------------------ 푸터------------------ */
 
         footer {
+            width: 100%;
             font-family:"맑은 고딕";
             font-size: 12px;
             color:rgb(151, 150, 150)
@@ -319,6 +316,7 @@
             flex-direction: row ;
             justify-content: space-between ;
             align-items: center ;
+            flex-wrap: wrap;
             border-top: 1px solid black ;
             border-bottom: 1px solid rgb(228, 228, 228) ;
             padding: 10px ;
@@ -329,10 +327,14 @@
         .information {
             display: flex;
             flex-direction: row ;
+            align-items: center;
+            flex-wrap: wrap;
         }
         .network {
             display: flex;
             flex-direction: row ;
+            align-items: center;
+            flex-wrap: wrap;
         }
         .network img {
             margin: 7px ;
@@ -356,6 +358,7 @@
             display: flex ;
             flex-direction: row ;
             justify-content: space-around;
+            flex-wrap: wrap;
             padding-top: 50px ;
             padding-bottom: 50px ;
             border-bottom: 1px solid rgb(228, 228, 228) ;
@@ -383,6 +386,7 @@
             display: flex ;
             flex-direction: row ;
             justify-content: space-between ;
+            flex-wrap: wrap;
             padding: 60px 0px 0px ;
         }
 
@@ -456,25 +460,27 @@
             <button type="button" class="messenger"><img src="img01/q_btn_naver.png"></button>
             <button type="button"><img src="img01/고객센터.png"></button>
             <button type="button"><img src="img01/장바구니.png"></button>
-            <button type="button"><img src="img01/위로 이동.png"></button>
+            <button type="button"><img src="img01/위로.png"></button>
         </div>    
         <header>
             <div id="top">
-                <a href="NUBIZIO_MAIN_v03.html"><img src="img01/누비지오.jpeg"></a>
+                <a href="NUBIZIO_MAIN_media_query.html">
+                    <img src="img01/누비지오.jpeg">
+                </a>
                 <div id="usermenu">
-                    <a href="#">로그인</a> |
-                    <a href="#">회원가입</a> |
+                    <a href="누비지오_로그인.html">로그인</a> |
+                    <a href="Nubizio.Signup.오상은.html">회원가입</a> |
                     <div class="dropmain">
                         <a>마이페이지▼</a>
                         <div class="sub">
-                            <a href="$">회원정보</a>
                             <a href="$">장바구니</a>
-                            <a href="$">관심상품</a>
+                            <a href="$">내쇼핑정보</a>
+                            <a href="$">회원정보</a>
                             <a href="$">적립금</a>
                             <a href="$">쿠폰</a>
                         </div>
                     </div> |
-                    <a href="#">고객만족센터</a> |
+                    <a href="누비지오_고객센터_합본.html">고객만족센터</a> |
                     <div class="dropmain">
                         <a>커뮤니티▼</a>
                         <div class="sub">
@@ -494,6 +500,15 @@
                         <a href="@">신상품</a>
                         <a href="@">인기 상품</a>
                         <a href="@">후기많은상품</a>
+                    </div>
+                </div>
+                <div class="dropmain">
+                    <button type="button">주제별</button>
+                    <div class="sub2">
+                        <a href="@">노컨셉</a>
+                        <a href="@">자체제작</a>
+                        <a href="@">키즈</a>
+                        <a href="@">누-울렛</a>
                     </div>
                 </div>
                 <div class="dropmain">
@@ -550,9 +565,9 @@
                         <a href="@">홈웨어</a>
                     </div>
                 </div>
-                <form class="search">
+                <form>
                     <input type="search" placeholder="검색">
-                    <input type="submit" value="검색">
+                    <button type="submit"><img src="img01/돋보기.png"></button>
                 </form>
             </nav>
         </header>

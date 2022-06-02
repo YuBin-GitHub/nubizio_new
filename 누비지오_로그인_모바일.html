@@ -7,17 +7,17 @@
     <title>Document</title>
     <style>
 
-
         #login-from {
-            border-top: 1px solid rgb(192, 20, 20);
             width: 636px;
             height: 720px;
-            /* padding: 100px 80px; */
+            padding: 100px 80px;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
+
+        
 
         a {text-decoration: none; color: rgb(82, 82, 82);}
 
@@ -29,12 +29,11 @@
             background: white;
         }
 
-        #a0101 button:hover {background-color: rgb(225, 225, 225);}
+        #a0101 button:hover {background-color: rgb(241, 243, 243);}
 
         #a0101 [name="로그인상단"], #a0202 [type="submit"] {font-size:large;}
 
         #a0202 [name="아이디비번"] {
-            background-color: white;
             width: 627px;
             height: 55px;
             margin: 0px;
@@ -47,7 +46,7 @@
         }
 
         [type="submit"]:nth-of-type(1) {
-            background-color: rgb(156, 155, 155);
+            background-color: rgb(2, 2, 36);
             color: white;
             font-weight: bold;
             border-radius: 3px;
@@ -55,7 +54,7 @@
         }
         
         [type="submit"]:nth-of-type(2) {
-            background-color: hsl(56, 100%, 50%);
+            background-color: rgb(255, 230, 0);
             font-weight: bold;
             border-radius: 3px;
             border: none;
@@ -70,25 +69,30 @@
 
         [type=image]:nth-of-type(3) {
             position: absolute;
-            top: 448px;
-            left: 20px; 
+            top: 567px;
+            left: 95px; 
         }
 
          [type=image]:nth-of-type(5) {
             position: absolute;
-            top: 530px;
-            left: 20px;
+            top: 647px;
+            right: 670px;
         }
 
-        #lasttt {
-            padding-bottom: 45px;
-            border-bottom: 1px solid rgb(0, 0, 0);
+        @media screen and (max-width:800px) {
+            #login-from {width: 400px;}
+
+            #a0101 button {width: 200px;}
+
+            #a0202 [name="아이디비번"], #a0202 [type="submit"] {width: 400px;}
         }
+
     </style>
 </head>
 <body>
-    <div id="login-from">
+<div id="login-from">
         <div id="a0101">
+            <hr color="red">
             <button>
                 <a href="로그인상단" name="로그인상단" target="_self"  style="font-weight: bold; color: black">로그인</a>
             </button><button>
@@ -111,15 +115,17 @@
                 <input type="submit" value="카카오톡 로그인">
                 <input type="image" src="img02/kakao_logo.png">
                 <input type="submit" value="네이버 로그인">
-                <input type="image" src="img02/Naver_logo.png">
+                <input type="image" src="img02/naver_logo.png">
             </div>
         </div>
         <br>
         <br>
-        <div id="lasttt">
+        <div>
             <a href="아이디 비밀번호 찾기" target="_self">아이디/비밀번호 찾기</a>
             <a href="회원가입" target="_self">회원가입</a>
         </div>
+        <br>
+        <hr>
     </div>
 
 
